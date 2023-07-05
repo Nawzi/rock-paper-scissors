@@ -15,21 +15,35 @@ function getComputerChoise(){
     let computerChoise = [1, 2, 3]; // let the computer chooses one in this array
     let randomChoise = Math.floor(Math.random() * computerChoise.length) + 1; //choose one at random 
     if (randomChoise == 1){ // if the random number is 1 
-        return randomChoise + " " + "rock"; // then show rock
+        return "rock"; // then show rock
     } else if (randomChoise == 2){ // if the random number is 2
-        return randomChoise + " " +  "paper" // then show paper
+        return "paper" // then show paper
     } else{
-        return randomChoise + " " +  "scissors" // otherwise the random number is 3 which then shows scissors
+        return "scissors" // otherwise the random number is 3 which then shows scissors
     }
     return randomChoise;
 }
 
 
 function playRound (playerSelection, computerSelection){
-    
+    // if player choose rock and computer choose rock, then it is a tie
+    if (playerSelection.toLowerCase() == "rock" && computerSelection == "rock") {
+        return "it is a tie"
+
+    // if player choose rock and computer choose paper, then computer wins
+    } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") {
+        return "Computer wins, paper beats rock!"
+    // if player choose rock and computer choose scissors, then player wins
+    }else if (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") {
+        return "Player wins, rock beats scissors"
+    }
+
 }
 
-console.log(getComputerChoise());
+const playerSelection = ("ROCK");
+const computerSelection = getComputerChoise();
+
+console.log(playRound(playerSelection, computerSelection));
 
 </script>
     
