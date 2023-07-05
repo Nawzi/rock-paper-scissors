@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper scissors</title>
+</head>
+<body>
+
+<script>
+
+// Create a function that at random chooses between: rock, paper and scissors.
+function getComputerChoise(){
+    // let computerChoise = ["rock", "paper", "scissors"]; // let the computer chooses one in this array
+    let computerChoise = [1, 2, 3]; // let the computer chooses one in this array
+    let randomChoise = Math.floor(Math.random() * computerChoise.length) + 1; //choose one at random 
+    if (randomChoise == 1){ // if the random number is 1 
+        return randomChoise + " " + "rock"; // then show rock
+    } else if (randomChoise == 2){ // if the random number is 2
+        return randomChoise + " " +  "paper" // then show paper
+    } else{
+        return randomChoise + " " +  "scissors" // otherwise the random number is 3 which then shows scissors
+    }
+    return randomChoise;
+}
+
+
+console.log(getComputerChoise());
+
+</script>
+    
+</body>
+</html>
